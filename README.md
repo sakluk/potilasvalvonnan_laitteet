@@ -1,1 +1,0 @@
-# potilasvalvonnan_laitteet
