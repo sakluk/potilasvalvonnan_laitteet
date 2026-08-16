@@ -225,3 +225,8 @@ equipment and medical electrical systems.* International Electrotechnical Commis
 
 IEC 62353:2014. *Medical electrical equipment — Recurrent test and test after repair of
 medical electrical equipment.* International Electrotechnical Commission.
+
+---
+
+*Potilasvalvonnan laitteet — TX00EY15 | Metropolia Ammattikorkeakoulu*
+

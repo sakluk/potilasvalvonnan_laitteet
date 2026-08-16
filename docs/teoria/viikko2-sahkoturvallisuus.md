@@ -203,3 +203,8 @@ electropathology.* Springer. https://doi.org/10.1007/978-1-4612-1664-3
 Watson, A. B., Wright, J. S., & Loughman, J. (1973). Electrical thresholds for
 ventricular fibrillation in man. *Medical Journal of Australia*, 1(24), 1179–1182.
 https://doi.org/10.5694/j.1326-5377.1973.tb113838.x
+
+---
+
+*Potilasvalvonnan laitteet — TX00EY15 | Metropolia Ammattikorkeakoulu*
+
