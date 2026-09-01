@@ -68,8 +68,9 @@ vikavirtaenergia ohjautuu maahan — ei ihmisen läpi. Matala resistanssi myös
 sulattaa sulakkeen nopeasti.
 
 **Mittauksella** varmistetaan, että suojamaadoitusjohdin on ehjä ja liitokset
-hyvässä kunnossa. SFS-EN 62353 antaa raja-arvon; löydät sen standardin
-taulukosta 1.
+hyvässä kunnossa. SFS-EN 62353 ei anna suojamaadoitusresistanssin raja-arvoa
+taulukossa, vaan se todetaan kohdan 5.3.2 (suojamaadoitusresistanssin mittaus)
+tekstissä.
 
 ### Eristysvastus
 
@@ -105,6 +106,92 @@ vaarallinen.
 
 ---
 
+## Ei-johtavat liityntäosat: miten SpO2- ja NIBP-anturi kytketään analysaattoriin
+
+### Ongelma
+
+Edellä kuvattu liityntäosan vuotovirran mittaus olettaa, että liityntäosassa on
+**johtava potilaskontakti** — EKG-nepparit, invasiivisen paineanturin nestepatsas,
+lämpötila-anturin metallikärki. Silloin sekä SFS-EN 62353 että ESA615:n manuaali
+antavat suoraviivaisen ohjeen: yhdistä saman liityntäosan kaikki potilasjohtimet
+yhteen ja kytke ne analysaattorin liityntäosanapaan (*applied part terminal*).
+
+SpO2- ja NIBP-antureissa tätä johtavaa kontaktia ei ole:
+
+- **SpO2-anturi** kytkeytyy potilaaseen **optisesti**. Valolähde (LED) ja
+  valoilmaisin (photodiode) ovat läpinäkyvän muovi-ikkunan takana; sormea ei
+  kosketa mikään sähköä johtava osa.
+- **NIBP-mansetti** kytkeytyy potilaaseen **pneumaattisesti**. Paineanturi on
+  monitorin sisällä, ja mansettiin johtaa vain ilmapatsas letkussa. Mansetti
+  itse on kangasta ja kumia.
+
+Standardin yleisohje ei siis sellaisenaan kerro, mihin analysaattorin johdin
+kiinnitetään.
+
+### Standardin ratkaisu: ei-johtava pinta korvataan folilla tai keittosuolalla
+
+IEC 60601-1 (kohta 8.7.4.7) ja samaan periaatteeseen nojaava SFS-EN 62353
+käsittelevät tilanteen: **jos liityntäosan potilasta vasten tuleva pinta ei ole
+johtava**, se joko
+
+1. **kääritään metallifolioon** (*metal foil*), jonka kosketuspinta-ala vastaa
+   todellista potilaskontaktia, tai
+2. **upotetaan 0,9-prosenttiseen keittosuolaliuokseen** (*saline*),
+
+ja folio tai liuos kytketään analysaattorin liityntäosanapaan. Folio toimii
+"korvikepotilaana": se on johtava elektrodi juuri siinä kohdassa, jota oikea
+potilas koskettaisi. Mittaus kertoo, kuinka paljon virtaa moduulin
+elektroniikasta voisi kytkeytyä potilaaseen — kapasitiivisesti muovi-ikkunan
+läpi tai eristysvian kautta.
+
+### SpO2 käytännössä
+
+**Menetelmä A — foliomenetelmä (standardinmukaisin, havainnollisin labrassa):**
+
+1. Kytke SpO2-anturi monitoriin normaalisti.
+2. Kääri sormipinnen molemmat leuat — kohta, johon sormi asettuu —
+   alumiinifolioon niin, että ylä- ja alapuoli ovat sähköisesti yhteydessä
+   toisiinsa.
+3. Kytke ESA615:n liityntäosajohdin folioon.
+4. Aja liityntäosan vuotovirtatestit: potilasvuotovirta (*patient leakage*,
+   suora, normaali tila ja vikatila, molemmat verkkonapaisuudet) ja verkkojännite
+   liityntäosassa (*mains on applied part*, MAP).
+
+**Menetelmä B — liitinnastamenetelmä (moduulin testaus ilman anturia):**
+
+1. Hanki anturin vastakappale tai avaa uhrattava jatkojohto.
+2. Oikosulje kaikki potilaspuolen nastat toisiinsa (LED-anodi, LED-katodi,
+   fotodiodi — varmuuden vuoksi liittimen kaikki nastat).
+3. Kytke nastanippu ESA615:n liityntäosanapaan ja valitse analysaattorin
+   valikosta kaikkien AP-napojen yhdistäminen.
+4. Aja samat testit kuin menetelmässä A.
+
+Molemmat antavat konservatiivisen (worst-case) tuloksen, koska ainoa mahdollinen
+virtareitti potilaaseen kulkisi näiden johtimien kautta.
+
+### NIBP käytännössä
+
+Ilmapatsas ei johda sähköä, joten **NIBP:llä ei käytännössä ole sähköistä
+liityntäosaa** — luokitus on silti BF fyysisen kosketuksen vuoksi. Kaksi
+hyväksyttyä tapaa:
+
+- **Foliomenetelmä:** kääri mansetin rakko-osa (potilasta vasten tuleva pinta)
+  alumiinifolioon, kytke folio ESA615:n liityntäosanapaan ja aja potilasvuotovirta-
+  ja MAP-testit. Tulos on tyypillisesti lähellä nollaa.
+- **Merkintä "ei sovellu":** monissa kenttätestiohjeissa NIBP kirjataan muotoon
+  "pneumaattinen liityntä, ei sähköistä potilaskontaktia — potilasvuotovirtatesti
+  ei sovellu".
+
+### Mistä laitekohtainen ohje löytyy
+
+Standardi jättää tarkan kytkennän tarkoituksella laitevalmistajan huoltodokumentin
+varaan. **CARESCAPE B650 Technical Manual**, luku 5.2 (Electrical safety tests),
+antaa laitekohtaisen kytkentätaulukon ja kertoo, mitä testiadaptereita SpO2:lle
+ja NIBP:lle käytetään. Ks. myös [b650-psmp-moduuli.md](b650-psmp-moduuli.md)
+mittauskanavien kytkentöjen osalta.
+
+---
+
 ## SFS-EN 62353: toistuva testaus käytännössä
 
 Lääkintälaite testataan kattavasti ensimmäistä markkinoillelaskua varten
@@ -117,11 +204,10 @@ Sen rakenne:
 
 | Luku | Sisältö |
 |------|---------|
-| 5.1 | Visuaalinen tarkistus |
-| 5.2 | Suojamaadoitusvastus |
-| 5.3.2 | Suojamaadoitusresistanssin mittaus (menetelmät) |
-| 5.3.3 | Eristysvastuksen mittaus |
-| 5.3.4 | Vuotovirtojen mittaus |
+| 5   | Testit |
+| 5.1 | Yleistä |
+| 5.2 | Visuaalinen tarkistus |
+| 5.3 | Mittaukset |
 | 5.4 | Toiminnallinen testaus |
 | 6 | Dokumentointi ja raportointi |
 | Liite B | Suositeltava testausjärjestys |
@@ -161,7 +247,7 @@ askel kerrallaan.
 | Materiaali | Luettava osio | Miksi |
 |-----------|--------------|-------|
 | **SFS-EN 62353** | Luku 5 (testausmenetelmät) ja liite B (testausjärjestys) | Ymmärrät mittausjärjestyksen logiikan |
-| **SFS-EN 62353** | Taulukko 1 (raja-arvot) | Tiedät, mihin tuloksia verrataan |
+| **SFS-EN 62353** | Taulukko 3 sekä kohtien 5.3.2–5.3.3 teksti (raja-arvot) | Tiedät, mihin tuloksia verrataan |
 | **B650 Technical Manual** | Luku 5.1 (Visual Inspection) | Visuaalisen tarkastuksen tarkistuslista |
 | **B650 Technical Manual** | Luku 5.2 (Electrical safety tests) | Laitevalmistajan testausvaatimukset |
 | **Pokharel (2024)** | Luku 2.1.2 (ESA615:n liitännät ja painikkeet) | ESA615:n paneelit tutuiksi ennen labraa |
