@@ -233,8 +233,11 @@ vaihtamista. Lab 2:ssa vertaillaan, onko valmiin sekvenssin käyttö mahdollista
 ja riittävää B650:n testaamiseen.
 
 **Paneelit ja liitännät:** ESA615:n etupaneelin liittimet, painikkeet ja
-näyttö on kuvattu yksityiskohtaisesti valokuvineen Pokharel (2024) luvussa 2.1.2.
-**Manuaalinen testausvaiheistus** valokuvineen löytyy Pokharel (2024) luvusta 3.1.
+näyttö on kuvattu käyttöohjeen kappaleessa "Instrument Familiarization"
+(s. 6–12). **Käytännön kytkentäjärjestys** selviää saman ohjeen kuvista
+Figure 5 ("DUT connections to the Product") ja Figure 12 ("Ground Wire
+(Protective Earth) Resistance measurement connections"). Pokharel (2024)
+luku 3.1 näyttää saman vaiheistuksen käytännön valokuvina.
 
 ---
 
@@ -250,17 +253,24 @@ askel kerrallaan.
 | **SFS-EN 62353** | Taulukko 3 sekä kohtien 5.3.2–5.3.3 teksti (raja-arvot) | Tiedät, mihin tuloksia verrataan |
 | **B650 Technical Manual** | Luku 5.1 (Visual Inspection) | Visuaalisen tarkastuksen tarkistuslista |
 | **B650 Technical Manual** | Luku 5.2 (Electrical safety tests) | Laitevalmistajan testausvaatimukset |
-| **Pokharel (2024)** | Luku 2.1.2 (ESA615:n liitännät ja painikkeet) | ESA615:n paneelit tutuiksi ennen labraa |
-| **Pokharel (2024)** | Luku 3.1 (sähköturvallisuustestauksen vaiheistus) | Käytännön kytkentäjärjestys valokuvineen |
+| **ESA615 Users Manual** | Kappale "Instrument Familiarization" (s. 6–12) | ESA615:n paneelit ja liitännät tutuiksi ennen labraa |
+| **ESA615 Users Manual** | Figure 5 ("DUT connections to the Product") ja Figure 12 ("Ground Wire (Protective Earth) Resistance measurement connections") | Käytännön kytkentäjärjestys |
+| **Pokharel (2024)** | Luku 3.1 (sähköturvallisuustestauksen vaiheistus) | Sama kytkentäjärjestys käytännön valokuvina |
 | **ESA615 Users Manual** | s. 27 (Insulation resistance test) | Eristysvastustestin soveltuvuuden arviointi |
 
 ---
 
 ## Viitekirjallisuus
 
+Fluke Biomedical. (Feb, 2012). *ESA615 Electrical Safety Analyzer: Users Manual*.
+Fluke Biomedical.
+
 IEC 60601-1:2005+AMD1:2012+AMD2:2020. *Medical electrical equipment — Part 1:
 General requirements for basic safety and essential performance*. International
 Electrotechnical Commission.
+
+Pokharel, K. (2024). *Potilasmonitorien testausympäristö*
+[Projektityö]. Metropolia Ammattikorkeakoulu.
 
 SFS-EN 62353:2014. *Sähkökäyttöiset terveydenhuollon laitteet. Toistuva ja
 korjauksen jälkeinen testaus*. Suomen Standardisoimisliitto SFS.
