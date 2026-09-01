@@ -262,8 +262,8 @@ askel kerrallaan.
 
 ## Viitekirjallisuus
 
-Fluke Biomedical. (Feb, 2012). *ESA615 Electrical Safety Analyzer: Users Manual*.
-Fluke Biomedical.
+Fluke Biomedical. (2012, helmikuu). *ESA615 Electrical Safety Analyzer: Users
+Manual*. Fluke Biomedical.
 
 IEC 60601-1:2005+AMD1:2012+AMD2:2020. *Medical electrical equipment — Part 1:
 General requirements for basic safety and essential performance*. International
