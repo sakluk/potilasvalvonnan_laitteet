@@ -45,11 +45,11 @@ enimmäisarvon.
 | Luokka | Merkitys | Esimerkit | Sallittu potilaan vuotovirta (AC, normaali) |
 |--------|---------|-----------|---------------------------------------------|
 | **B** (Body) | Liityntäosa kehon lähellä, ei suorassa sähköisessä yhteydessä | Ultraäänilaite potilaan päällä | 100 μA |
-| **BF** (Body Floating) | Eristetty liityntäosa kosketuksessa potilaan pintaan | EKG-elektrodit, SpO2-sensori, NIBP-mansettijohdot | 100 μA |
-| **CF** (Cardiac Floating) | Eristetty liityntäosa, joka voi olla suorassa sydämen lähellä | IBP-katetrijohdot, defibrillaattorin sisäiset johdot | **10 μA** |
+| **BF** (Body Floating) | Eristetty liityntäosa kosketuksessa potilaan pintaan | SpO2-sensori| 100 μA |
+| **CF** (Cardiac Floating) | Eristetty liityntäosa, joka voi olla suorassa sydämen lähellä | IBP-katetrijohdot | **10 μA** |
 
-PSMP-moduulissa B650:ssa on sekä BF- (EKG, SpO2, impedanssihengitys, NIBP)
-että CF-luokan (IBP, invasiivinen verenpaine) liityntäosia. Tämä on syy, miksi
+PSMP-moduulissa B650:ssa on sekä BF- 
+että CF-luokan liityntäosia. Tämä on syy, miksi
 moduulia testataan erikseen.
 
 ---
