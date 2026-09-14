@@ -42,10 +42,10 @@ IEC 60601-1 -standardi luokittelee lääkintälaitteiden liityntäosat sen mukaa
 kuinka lähelle sydäntä ne voivat joutua. Luokka määrää sallitun vuotovirran
 enimmäisarvon.
 
-| Luokka | Merkitys | Esimerkit | Sallittu potilaan vuotovirta (AC, normaali) |
+| Luokka | Merkitys | Esimerkki | Sallittu potilaan vuotovirta (AC, normaali) |
 |--------|---------|-----------|---------------------------------------------|
 | **B** (Body) | Liityntäosa kehon lähellä, ei suorassa sähköisessä yhteydessä | Ultraäänilaite potilaan päällä | 100 μA |
-| **BF** (Body Floating) | Eristetty liityntäosa kosketuksessa potilaan pintaan | SpO2-sensori| 100 μA |
+| **BF** (Body Floating) | Eristetty liityntäosa kosketuksessa potilaan pintaan | NIBP| 100 μA |
 | **CF** (Cardiac Floating) | Eristetty liityntäosa, joka voi olla suorassa sydämen lähellä | IBP-katetrijohdot | **10 μA** |
 
 PSMP-moduulissa B650:ssa on sekä BF- 
