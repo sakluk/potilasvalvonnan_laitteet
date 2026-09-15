@@ -70,8 +70,7 @@ lukea vain tiettyjä sanoja.
 | `TEMP C 37.0` | Aseta kehonlämpötila 37,0 °C (Celsius) |
 | `RESPRUN` | Käynnistä hengityssimulaatio |
 
-Yksityiskohtaisempi komentoprotokolla löytyy Pokharel (2024) luvusta 3.2.2
-sekä Prosim 8:n *Remote Control* -manuaalista.
+Yksityiskohtaisempi komentoprotokolla löytyy Prosim 8:n *Remote Control* -manuaalista.
 
 ---
 
@@ -82,11 +81,11 @@ Lab 4:n ohjausympäristö koostuu neljästä kerroksesta:
 | Kerros | Komponentti | Tehtävä |
 |--------|------------|---------|
 | Testiskriptit | Robot Framework `.robot`-tiedostot | Testien logiikka, luettava kielellinen kuvaus |
-| Kommunikaatiokirjasto | `CustomSerialLibrary.py` | Avaa COM-portin, lähettää/vastaanottaa komentoja |
+| Kommunikaatiokirjasto | `CustomSerialLibrary.py` tai `SerialLibrary` | Avaa COM-portin, lähettää/vastaanottaa komentoja |
 | Sarjaporttituki | `pyserial` Python-kirjasto | Alustason COM-porttioperaatiot |
-| Suoritusympäristö | Python 3.x + kehitysympäristö (PyCharm) | Koodin ajaminen, debuggaus |
+| Suoritusympäristö | Python 3.x + kehitysympäristö (VSCode tai PyCharm) | Koodin ajaminen, debuggaus |
 
-Robot Framework kutsuu `CustomSerialLibrary.py`-kirjastoa, joka käyttää
+Robot Framework kutsuu `CustomSerialLibrary.py`- tai `SerialLibrary`-kirjastoa, joka käyttää
 `pyserial`-kirjastoa COM-portin avaamiseen. Sinun tehtäväsi labrassa on
 kirjoittaa ja suorittaa `.robot`-testiskriptejä — et kirjoita sarjakommunikaatiota
 itse.
@@ -118,19 +117,18 @@ Asennettavat komponentit lyhyesti:
    pip install robotframework-lsp
    ```
 4. **USB-sarjamuuntimen ajuri** — tarvitaan, jos tietokone ei tunnista
-   Prosim 8:aa automaattisesti. Katso malli Prosim 8:n takapaneelista;
-   ajuri löytyy valmistajan sivuilta.
-5. **CustomSerialLibrary.py** — kurssin OMA-työtilasta (ladataan projektin
-   kansioon ennen labraa)
+   Prosim 8:aa automaattisesti. Ajuri löytyy osoitteesta: [prosim-8-project](https://gitlab.metropolia.fi/kiranpo/prosim-8-project/-/blob/main/CDM212364_Setup.exe)
+5. **CustomSerialLibrary.py** — löytyy samoin [prosim-8-project](https://gitlab.metropolia.fi/kiranpo/prosim-8-project/-/tree/main)-kansiosta
 
 ### Toimivuuden tarkistuslista
 
 Ennen labraan tuloa, tarkista nämä omalla tietokoneellasi:
 
 - [ ] `python --version` tulostaa version (3.x) komentoriviltä
+- [ ] PyCharm (tai valittu IDE) avautuu ja tunnistaa Python-tulkin
 - [ ] `pip show pyserial` tulostaa versiotiedot (ei virhettä)
 - [ ] `pip show robotframework` tulostaa versiotiedot
-- [ ] PyCharm (tai valittu IDE) avautuu ja tunnistaa Python-tulkin
+- [ ] `pip show robotframework-seriallibrary` - tulostaa versiotiedot
 - [ ] `CustomSerialLibrary.py` on ladattu projektin kansioon
 
 Prosim 8:n kytkemistä tietokoneeseen ja COM-portin tunnistamista harjoitellaan
@@ -150,11 +148,11 @@ Lab 4 on kurssin ohjelmointisessio. Tavoitteena on kirjoittaa Robot Framework
 | Pokharel (2024) | Luku 3.2.2 (ss. 67–70) | Asennusvaiheet ja ympäristön konfigurointi |
 | Pokharel (2024) | Luku 3.2 (etäsimulointi-osio) | Komentoprotokollan periaate ja esimerkkikomennot |
 | Robot Framework -dokumentaatio | [robotframework.org/robotframework/](https://robotframework.org/robotframework/) | Testiskriptin rakenne (`*** Test Cases ***`, `*** Keywords ***`) |
+| Prosim 8 Communications Interface | Prosim 8 ohjelmointirajapinnan dokumentaatio |
 
-**Labraan tuo:**
+**Tuo labraan:**
 - Oma kannettava tietokone, johon ohjelmistot on asennettu
-- USB-A-kaapeli (Prosim 8:n liitäntä)
-- Kurssin OMA:sta ladattu `CustomSerialLibrary.py`
+- USB-A adapteri, jos kannettavassa tietokoneessasi ei ole USB-A porttia
 
 ---
 
