@@ -1,0 +1,3 @@
+robotframework
+pyserial
+robotframework-seriallibrary
