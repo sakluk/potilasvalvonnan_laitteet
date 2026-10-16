@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on darwin)" generated="2026-10-10T16:14:41.992365" rpa="false" schemaversion="5">
+<suite id="s1" name="Asennus" source="/Users/abonti/Documents/PYTHONIN &amp; ROBOT FRAMEWORKIN ASENNUSOPAS/tests/asennus.robot">
+<test id="s1-t1" name="Asennuksen tarkistus" line="6">
+<kw name="Open Port" owner="SerialLibrary">
+<doc>Opens specified port.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.203902" elapsed="0.000199"/>
+</kw>
+<kw name="Port Should Be Open" owner="SerialLibrary">
+<doc>Fails if specified port is closed.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.204374" elapsed="0.000169"/>
+</kw>
+<kw name="Write Data" owner="SerialLibrary">
+<arg>ASENNUS_OK\n</arg>
+<doc>Writes data into the port.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.204746" elapsed="0.000236"/>
+</kw>
+<kw name="Read Until" owner="SerialLibrary">
+<msg time="2026-10-10T16:14:42.205485" level="INFO">${vastaus} = ASENNUS_OK
+</msg>
+<var>${vastaus}</var>
+<arg>terminator=\n</arg>
+<doc>Read until a termination sequence is found, size exceeded or timeout.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.205181" elapsed="0.000343"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2026-10-10T16:14:42.205972" level="INFO">${vastaus} = ASENNUS_OK</msg>
+<var>${vastaus}</var>
+<arg>${vastaus}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.205733" elapsed="0.000273"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${vastaus}</arg>
+<arg>ASENNUS_OK</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.206212" elapsed="0.000248"/>
+</kw>
+<kw name="Close Port" owner="SerialLibrary" type="TEARDOWN">
+<doc>Closes specified port.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.206807" elapsed="0.000129"/>
+</kw>
+<doc>Tarkistaa sarjaporttikirjaston toiminnan ilman laitetta.</doc>
+<status status="PASS" start="2026-10-10T16:14:42.202553" elapsed="0.004494"/>
+</test>
+<status status="PASS" start="2026-10-10T16:14:42.028167" elapsed="0.181488"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Asennus" id="s1" pass="1" fail="0" skip="0">Asennus</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
